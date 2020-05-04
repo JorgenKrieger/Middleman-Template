@@ -1,5 +1,5 @@
 # Middleman Template
-![GitHub Actions](https://github.com/jorgenkrieger/Middleman-Template/workflows/Build%20and%20S3%20Sync/badge.svg?event=push)
+![GitHub Actions](https://github.com/jorgenkrieger/Middleman-Template/workflows/Push/badge.svg)
 
 This repo contains an extensive template for [Middleman](https://www.middlemanapp.com), running in a [Docker](https://www.docker.com) environment.<br>
 In this setup you'll find Webpack with support for Sass/SCSS, TypeScript and testing via Jest.</p>
