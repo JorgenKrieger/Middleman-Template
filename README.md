@@ -1,5 +1,5 @@
 # Middleman Template
-![GitHub Actions](https://github.com/jorgenkrieger/Middleman-Template/workflows/Push/badge.svg)
+![GitHub Actions](https://github.com/jorgenkrieger/Middleman-Template/workflows/Latest%20commit/badge.svg)
 
 This repo contains an extensive template for [Middleman](https://www.middlemanapp.com), running in a [Docker](https://www.docker.com) environment.<br>
 In this setup you'll find Webpack with support for Sass/SCSS, TypeScript and testing via Jest.</p>
@@ -7,10 +7,17 @@ In this setup you'll find Webpack with support for Sass/SCSS, TypeScript and tes
 ## Installation
 _**Prerequisites:** Docker_
 
-Simply clone this repo and run the actions at **Usage** to start developing
+There are two easy options to get started with this template.
+
+1. **Create repo**
+
+[Use this template](https://github.com/JorgenKrieger/Middleman-Template/generate) to create a new repository.
+
+2. **Git clone**
 ```
-git clone git@github.com:JorgenKrieger/Blank-Middleman.git
+git clone https://github.com/JorgenKrieger/Middleman-Template.git
 ```
+
 
 
 ## Usage

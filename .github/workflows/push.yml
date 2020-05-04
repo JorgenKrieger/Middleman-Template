@@ -1,4 +1,4 @@
-name: Push
+name: Latest commit
 on: push
 jobs:
     test:
