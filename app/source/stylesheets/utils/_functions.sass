@@ -1,0 +1,26 @@
+// Breakpoint functions, heavily borrowed from Bootstrap
+// - Name the next breakpoint, or null for the last breakpoint
+@function breakpoint-next($name, $breakpoints: $screen-breakpoints, $breakpoint-names: map-keys($breakpoints))
+  $n: index($breakpoint-names, $name)
+  @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null)
+
+// - Minimum breakpoint width. Null for the smallest (first) breakpoint.
+@function breakpoint-min($name, $breakpoints: $screen-breakpoints)
+  $min: map-get($breakpoints, $name)
+  @return if($min != 0, $min, null)
+
+// - Maximum breakpoint width. Null for the largest (last) breakpoint.
+@function breakpoint-max($name, $breakpoints: $screen-breakpoints)
+  $next: breakpoint-next($name, $breakpoints)
+  @return if($next, breakpoint-min($next, $breakpoints) - .02, null)
+
+// Fluid Type Support
+@function strip-unit($value)
+  @return $value / ($value * 0 + 1) 
+
+// Css Var shortcuts
+@function v($var, $fallback: null)
+  @if($fallback)
+    @return var(--#{$var}, #{$fallback})
+  @else
+    @return var(--#{$var})

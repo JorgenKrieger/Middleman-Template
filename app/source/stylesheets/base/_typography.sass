@@ -1,0 +1,7 @@
+\:root
+    @include fluid-size('--fontSize', 'mobile', $base-text-size, 'full-hd', $base-text-size * 2)
+    --lineHeight: calc(var(--fontsize) * 1.5)
+
+    // Load fonts
+    @each $font, $value in $fonts
+        --#{$font}Font: #{$value}

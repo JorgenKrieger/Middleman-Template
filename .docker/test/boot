@@ -1,0 +1,3 @@
+npm config set registry https://registry.npmjs.org/
+npm install --no-audit
+npm run test

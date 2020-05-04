@@ -1,0 +1,53 @@
+{
+  "name": "middleman",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "webpack --config config/webpack.config.js --bail -p",
+    "serve": "webpack --config config/webpack.config.js --watch -d --display-error-details",
+    "test": "jest --colors"
+  },
+  "author": "Jörgen Krieger",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@babel/types": "^7.9.5",
+    "@types/jest": "^25.2.1",
+    "autoprefixer": "^9.7.6",
+    "babel-jest": "^25.4.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.5.2",
+    "fork-ts-checker-webpack-plugin": "^4.1.3",
+    "jest": "^25.4.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.4",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-typescript"
+    ]
+  },
+  "moduleDirectories": [
+    "node_modules",
+    "app"
+  ],
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

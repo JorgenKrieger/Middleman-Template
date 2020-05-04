@@ -1,0 +1,16 @@
+$screen-breakpoints: (
+    mobile: 576px,
+    tablet-sm: 768px,
+    tablet-md: 1024px,
+    tablet-xl: 1200px,
+    laptop: 1366px,
+    full-hd: 1920px,
+    quad-hd: 2560px,
+    ultra-hd: 3840px
+) !default;
+
+$base-text-size: 16px;
+
+$fonts: (
+    "sans": '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif'
+);

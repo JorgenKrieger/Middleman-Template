@@ -1,0 +1,21 @@
+- favicon_url = "images/favicons/favicon-"
+- favicon_sizes = [32, 57, 76, 96, 128, 192, 228]
+- android_sizes = [196]
+- ios_sizes = [120, 152, 180]
+
+
+// Generic Favicons
+- favicon_sizes.each do |size|
+    link rel="icon" sizes="#{size}x#{size}" href="#{favicon_url}#{size}.png"
+
+// Android
+- android_sizes.each do |size|
+    link rel="shortcut icon" sizes="#{size}x#{size}" href="#{favicon_url}#{size}.png"
+
+// iOS
+- ios_sizes.each do |size|
+    link rel="apple-touch-icon" sizes="#{size}x#{size}" href="#{favicon_url}#{size}.png"
+
+// Windows 8.1 + IE11 and above
+// -> This file requires custom configuration
+meta name="msapplication-config" content="browserconfig.xml"

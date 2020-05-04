@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  # Development environment
+  serve:
+    container_name: ProjectName
+    build:
+      context: ./
+      dockerfile: .docker/serve/Dockerfile
+    ports:
+      - 80:4567
+      - 1234:1234
+      - 35729:35729
+    volumes:
+      - ./.docker/serve/boot:/usr/local/bin/boot
+      - ./.gems:/usr/local/bundle/gems
+      - ./app:/app
+    tty: true
+    command: sh -c "/usr/local/bin/boot"
+
+  # Testing environment
+  test:
+    image: node:12.15.0-alpine
+    volumes:
+      - ./.docker/test/boot:/usr/local/bin/boot
+      - ./app:/app
+      - ./logs:/root/.npm/_logs
+    working_dir: /app
+    tty: true
+    command: sh -c "/usr/local/bin/boot"
+
+  # Build environment
+  build:
+    build: 
+      context: ./
+      dockerfile: .docker/build/Dockerfile
+    volumes:
+      - ./.docker/build/boot:/usr/local/bin/boot
+      - ./app:/app
+    tty: true
+    command: sh -c "/usr/local/bin/boot"
+
+  # Helper containers
+  npm:
+    image: node:12.15.0-alpine
+    container_name: npm
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    entrypoint: ['npm']
+  
+  gem:
+    image: ruby:2.7.0-alpine3.11
+    container_name: gem
+    volumes:
+      - ./.gems:/usr/local/bundle/gems
+    entrypoint: ['gem']

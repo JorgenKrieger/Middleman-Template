@@ -1,0 +1,16 @@
+# Website details
+
+site_name: MiddlemanProject
+description: >
+    Lorem ipsum dolor sit amet
+
+type: website
+locale: en_US
+url: https://example.com
+
+open_graph_image: /images/openGraph.png
+open_graph_image_width: 300
+open_graph_image_height: 300
+
+twitter_card_type: summary
+twitter_creator: twitterHandle

@@ -1,0 +1,12 @@
+// Fluid font-size support
+@mixin fluid-size($property, $min-vw, $min-font-size, $max-vw, $max-font-size, $breakpoints: $screen-breakpoints)
+    $min: breakpoint-min(#{$min-vw}, $breakpoints)
+    $max: breakpoint-max($max-vw, $breakpoints)
+
+    #{$property}: $min-font-size
+
+    @media (min-width: #{$min})
+        #{$property}: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min}) / #{strip-unit($max - $min)} ))
+    
+    @media (min-width: #{$max})
+        #{$property}: #{$max-font-size}
